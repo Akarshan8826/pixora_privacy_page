@@ -28,6 +28,24 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.reading-progress {
+  position: fixed;
+  z-index: 10;
+  inset: 0 0 auto;
+  height: 3px;
+  background: transparent;
+}
+
+.reading-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #9d8eff, #6759df);
+  transform: scaleX(0);
+  transform-origin: left;
+  will-change: transform;
+}
+
 a {
   color: var(--purple);
 }
@@ -154,6 +172,7 @@ h1 {
   right: 35px;
   width: 215px;
   height: 215px;
+  animation: float 10s ease-in-out infinite;
 }
 
 .orb-two {
@@ -161,6 +180,7 @@ h1 {
   right: 67px;
   width: 151px;
   height: 151px;
+  animation: float 8s ease-in-out -2s infinite reverse;
 }
 
 .orb-three {
@@ -262,6 +282,80 @@ h1 {
 .contents a:focus-visible {
   background: #f2f1ff;
   color: var(--purple);
+  animation: pulse 5s ease-in-out infinite;
+}
+
+.js .policy-content section {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.js .policy-content section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contents a[aria-current="location"] {
+  background: #f2f1ff;
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.back-to-top {
+  position: fixed;
+  z-index: 5;
+  right: max(24px, calc((100vw - 1000px) / 2));
+  bottom: 24px;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid #e8e5fb;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 5px 20px rgb(34 42 79 / 12%);
+  color: var(--purple);
+  cursor: pointer;
+  font: inherit;
+  font-size: 23px;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgb(34 42 79 / 16%);
+}
+
+.back-to-top:focus-visible {
+  outline: 3px solid #aaa1ff;
+  outline-offset: 3px;
+}
+
+.back-to-top[hidden] {
+  display: none;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
 .policy-card {
@@ -406,5 +500,19 @@ h1 {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .js .policy-content section {
+    opacity: 1;
+    transform: none;
   }
 }
