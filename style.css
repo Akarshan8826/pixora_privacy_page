@@ -1,0 +1,410 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  color-scheme: light;
+  --ink: #1d2340;
+  --muted: #68708a;
+  --purple: #6658df;
+  --line: #e9eaf2;
+  --page: #f5f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--purple);
+}
+
+.site-header,
+.site-footer {
+  width: min(1120px, calc(100% - 48px));
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header {
+  height: 76px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 11px;
+  background: #e9e7ff;
+  color: var(--purple);
+  font-size: 19px;
+}
+
+.header-label {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+main,
+.site-footer {
+  width: min(960px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  min-height: 266px;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 38px 54px;
+  border-radius: 24px;
+  background: linear-gradient(115deg, #242650 0%, #47418d 58%, #7465df 100%);
+  color: white;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 570px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: #c8c3ff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(32px, 5vw, 44px);
+  letter-spacing: -0.045em;
+  line-height: 1.2;
+}
+
+.hero-description {
+  max-width: 500px;
+  margin-bottom: 14px;
+  color: #e3e1ff;
+  font-size: 15px;
+}
+
+.updated {
+  margin-bottom: 0;
+  color: #c8c3ff;
+  font-size: 12px;
+}
+
+.hero-art {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 34%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  display: block;
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 50%;
+}
+
+.orb-one {
+  top: 25px;
+  right: 35px;
+  width: 215px;
+  height: 215px;
+}
+
+.orb-two {
+  top: 57px;
+  right: 67px;
+  width: 151px;
+  height: 151px;
+}
+
+.orb-three {
+  top: 89px;
+  right: 99px;
+  width: 87px;
+  height: 87px;
+  background: rgb(255 255 255 / 9%);
+}
+
+.art-sparkle {
+  position: absolute;
+  top: 83px;
+  right: 126px;
+  color: #fff;
+  font-size: 35px;
+}
+
+.policy-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  align-items: start;
+  gap: 20px;
+  margin-top: 22px;
+}
+
+.notice {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 13px;
+  padding: 17px 20px;
+  border: 1px solid #e8e4ff;
+  border-radius: 14px;
+  background: #f0eeff;
+  color: #383365;
+}
+
+.notice-icon {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  place-items: center;
+  border-radius: 50%;
+  background: #dedaff;
+  color: #5143c3;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.notice strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 13px;
+}
+
+.notice p {
+  margin-bottom: 0;
+  color: #5b5681;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.contents,
+.policy-card {
+  border: 1px solid #eceef4;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 30px rgb(34 42 79 / 4%);
+}
+
+.contents {
+  position: sticky;
+  top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 21px 14px;
+}
+
+.contents-title {
+  margin: 0 8px 9px;
+  color: #8b91a6;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.contents a {
+  padding: 7px 8px;
+  border-radius: 7px;
+  color: #626a82;
+  font-size: 12px;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.contents a:hover,
+.contents a:focus-visible {
+  background: #f2f1ff;
+  color: var(--purple);
+}
+
+.policy-card {
+  min-width: 0;
+  padding: 34px 40px;
+}
+
+.policy-content .intro {
+  margin-bottom: 27px;
+  color: #5f6780;
+}
+
+.policy-content section {
+  padding: 23px 0 19px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 20px;
+}
+
+.policy-content h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 11px;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.45;
+}
+
+.policy-content h2 span {
+  color: #9087ec;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.policy-content p,
+.policy-content li {
+  color: #646c83;
+  font-size: 13px;
+}
+
+.policy-content p {
+  margin-bottom: 11px;
+}
+
+.policy-content ul {
+  margin: 0 0 13px;
+  padding-left: 20px;
+}
+
+.policy-content li {
+  margin-bottom: 6px;
+  padding-left: 3px;
+}
+
+.policy-content li::marker {
+  color: #877de8;
+}
+
+.policy-content strong {
+  color: #353c56;
+}
+
+.policy-content address {
+  color: #646c83;
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.9;
+}
+
+.site-footer {
+  padding-block: 25px 32px;
+  color: #858ba0;
+  font-size: 11px;
+}
+
+@media (max-width: 720px) {
+  .site-header,
+  .site-footer,
+  main {
+    width: min(100% - 32px, 560px);
+  }
+
+  .hero {
+    min-height: 245px;
+    padding: 32px 28px;
+  }
+
+  .hero-art {
+    right: -85px;
+    width: 48%;
+    opacity: 0.65;
+  }
+
+  .policy-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .notice {
+    grid-column: auto;
+  }
+
+  .contents {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .contents-title {
+    grid-column: 1 / -1;
+  }
+
+  .policy-card {
+    padding: 26px 24px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero {
+    padding-inline: 22px;
+  }
+
+  .hero-art {
+    right: -125px;
+    opacity: 0.4;
+  }
+
+  .header-label {
+    font-size: 11px;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
